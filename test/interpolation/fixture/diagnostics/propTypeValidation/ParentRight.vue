@@ -4,6 +4,9 @@
     <ts-child :str="`count: ${count}`" :bool="isZeroCount" :callback="increment" :arr="zeroToCountAsStrings" />
     <ts-child :str="`count: ${count}`" :bool.sync="isZeroCount" :callback="increment" :arr="zeroToCountAsStrings" />
     <array-props-child :foo="42" />
+    <bool-child :someBool="true" />
+    <bool-child some-bool />
+    <bool-child someBool />
   </div>
 </template>
 
@@ -12,12 +15,14 @@ import Vue from 'vue';
 import JSChild from './JSChild.vue';
 import TSChild from './TSChild.vue';
 import ArrayPropsChild from './ArrayPropsChild.vue';
+import BoolChild from './BoolChild.vue';
 
 export default Vue.extend({
   components: {
     JSChild,
     TSChild,
-    ArrayPropsChild
+    ArrayPropsChild,
+    BoolChild
   },
   data() {
     return {
